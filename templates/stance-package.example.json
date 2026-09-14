@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "packageId": "author.example-sword-styles",
+  "packageVersion": "0.1.0",
+  "displayName": "Example Sword Styles",
+  "frameworkRequirement": {
+    "packageId": "org.stances-framework",
+    "versionRange": ">=0.1.0 <0.2.0"
+  },
+  "dependencies": [],
+  "trees": [
+    {
+      "treeId": "combat",
+      "displayName": "Combat",
+      "defaultNode": "neutral",
+      "defaultChildPolicy": "none",
+      "nodes": [
+        {
+          "nodeId": "neutral",
+          "displayName": "Neutral",
+          "parent": null,
+          "order": 0,
+          "tags": [
+            "baseline"
+          ],
+          "unlock": {
+            "mode": "always"
+          }
+        },
+        {
+          "nodeId": "hawk",
+          "displayName": "Hawk",
+          "parent": null,
+          "order": 10,
+          "tags": [
+            "aggressive",
+            "precision"
+          ],
+          "unlock": {
+            "mode": "always"
+          }
+        },
+        {
+          "nodeId": "hawk-duelist",
+          "displayName": "Hawk Duelist",
+          "parent": "hawk",
+          "order": 10,
+          "tags": [
+            "one-handed"
+          ],
+          "unlock": {
+            "mode": "requires-unlocked-node",
+            "node": "author.example-sword-styles:combat/hawk"
+          }
+        },
+        {
+          "nodeId": "hawk-marksman",
+          "displayName": "Hawk Marksman",
+          "parent": "hawk",
+          "order": 20,
+          "tags": [
+            "bow"
+          ],
+          "unlock": {
+            "mode": "requires-unlocked-node",
+            "node": "author.example-sword-styles:combat/hawk"
+          }
+        },
+        {
+          "nodeId": "bear",
+          "displayName": "Bear",
+          "parent": null,
+          "order": 20,
+          "tags": [
+            "heavy"
+          ],
+          "unlock": {
+            "mode": "always"
+          }
+        },
+        {
+          "nodeId": "wolf",
+          "displayName": "Wolf",
+          "parent": null,
+          "order": 30,
+          "tags": [
+            "mobile"
+          ],
+          "unlock": {
+            "mode": "always"
+          }
+        }
+      ]
+    }
+  ],
+  "animationSets": [
+    {
+      "animationSetId": "hawk-third-person",
+      "treeId": "combat",
+      "node": "hawk",
+      "view": "third-person",
+      "source": "assets/third-person/animations/hawk",
+      "matchMode": "inherited",
+      "priority": 100,
+      "oarConditions": []
+    },
+    {
+      "animationSetId": "hawk-duelist-third-person",
+      "treeId": "combat",
+      "node": "hawk-duelist",
+      "view": "third-person",
+      "source": "assets/third-person/animations/hawk-duelist",
+      "matchMode": "exact",
+      "priority": 200,
+      "oarConditions": []
+    }
+  ],
+  "patches": []
+}

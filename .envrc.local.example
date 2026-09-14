@@ -1,0 +1,14 @@
+# Copy this file to .envrc.local and replace the placeholder values.
+# .envrc.local is ignored and must never be committed.
+
+# Absolute path to the Amethyst executable or AppImage used for read-only
+# inspection and the dedicated test-profile workflow.
+export STANCES_AMETHYST_CLI="/replace/with/an/absolute/path/to/Amethyst"
+
+# Steam AppID for Skyrim Special Edition.
+export STANCES_AMETHYST_GAME="489830"
+
+# Use a separate, case-sensitive profile dedicated to testing.
+export STANCES_AMETHYST_PROFILE="stances-framework-test"
+
+# Do not add normal-save paths, credentials, Nexus tokens, or signing keys.
