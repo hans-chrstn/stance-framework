@@ -19,13 +19,13 @@ lint:
     @bash "{{root}}/scripts/not-implemented.sh" lint
 
 validate:
-    @bash "{{root}}/scripts/not-implemented.sh" validate
+    uv run --project tools/stancectl stancectl validate templates/stance-package.example.json
 
 plan:
     @bash "{{root}}/scripts/not-implemented.sh" plan
 
 test-unit:
-    @bash "{{root}}/scripts/not-implemented.sh" test-unit
+    uv run --project tools/stancectl pytest tests/unit
 
 test:
     @bash "{{root}}/scripts/not-implemented.sh" test

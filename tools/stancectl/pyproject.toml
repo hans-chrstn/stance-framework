@@ -1,0 +1,20 @@
+[project]
+name = "stancectl"
+version = "0.1.0"
+description = "Stances Framework authoring CLI"
+requires-python = ">=3.10"
+dependencies = [
+    "jsonschema>=4.21.1",
+]
+
+[project.scripts]
+stancectl = "stancectl.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
